@@ -2,6 +2,7 @@ package anastasia.sd;
 
 import com.company.Program;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 
 /**
@@ -9,7 +10,7 @@ import java.io.IOException;
  */
 public class Test {
     public static void main(String[] args) throws IOException {
-        forDemo();
+        splitDemo();
     }
 
     public static void readParse() throws IOException {
@@ -52,7 +53,6 @@ public class Test {
         strList2[35]="hello";
         System.out.println(strList[35]);
 
-
     }
     public static void stringConcat() throws IOException {
         String t;
@@ -81,7 +81,6 @@ public class Test {
             strList[i]=k;
             i=i+1;
 
-
         }
         System.out.print("Введите № строки:");
         k = Program.stdIn.readLine();
@@ -90,14 +89,24 @@ public class Test {
         t=t-1;
         System.out.println(strList[t]);
 
-
-
     }
     static void splitDemo() throws IOException {
         System.out.println("Введите строку: ");
-    }
+        String k=Program.stdIn.readLine();
+        String[] strList;
+        strList=k.split(" ");
 
-    static void whileDemo(){
+        int i=0;
+
+        while(i<strList.length){
+            if (strList[i].length()>0) {
+                System.out.format("[%s]='%s'\n", i, strList[i]);
+            }
+            i=i+1;
+        }
+
+    }
+    static void whileDemo() throws IOException {
         int a=1;
 
         while(a<10){
@@ -117,7 +126,7 @@ public class Test {
         do{
             System.out.println(a+" Hello ");
         }
+        while (a<10);
     }
-
 
 }
